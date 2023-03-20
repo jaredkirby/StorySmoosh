@@ -16,10 +16,6 @@ def main():
         page_title="StorySmoosh",
         page_icon=":book:",
         layout="centered")
-    st.image(
-        "https://em-content.zobj.net/thumbs/240/apple/325/open-book_1f4d6.png",
-        width=100,
-    )  
     display_welcome_screen()
     api_key = get_api_key_from_user()
     initialize_openai_api(api_key)
