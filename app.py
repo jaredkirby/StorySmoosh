@@ -16,10 +16,19 @@ def main():
         page_title="StorySmoosh",
         page_icon=":book:",
         layout="centered")
-    st.image(
-        "https://em-content.zobj.net/thumbs/240/apple/325/open-book_1f4d6.png",
-        width=100,
-    )
+    col1, col2, col3 = st.columns([1, 1, 2])
+    with col1:
+        st.image(
+            "https://em-content.zobj.net/thumbs/240/google/350/open-book_1f4d6.png",
+            width=160,
+        )
+    with col2:
+        st.image(
+            "https://em-content.zobj.net/thumbs/240/google/350/artist-palette_1f3a8.png",
+            width=150,
+        )
+    with col3:
+        st.write("")
     display_welcome_screen()
     api_key = get_api_key_from_user()
     initialize_openai_api(api_key)
