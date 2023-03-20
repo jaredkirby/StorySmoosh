@@ -14,7 +14,7 @@ STORY_ELEMENTS = {
 def main():
     st.set_page_config(
         page_title="StorySmoosh",
-        page_icon=":books:",
+        page_icon=":open book:",
         layout="centered")
     st.image(
         "https://em-content.zobj.net/thumbs/240/apple/325/open-book_1f4d6.png", "https://em-content.zobj.net/thumbs/240/apple/325/pancakes_1f95e.png"
