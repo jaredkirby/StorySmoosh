@@ -16,11 +16,11 @@ def main():
         page_title="StorySmoosh",
         page_icon=":book:",
         layout="centered")
-    col1, col2, col3 = st.columns([1, 1, 2])
+    col1, col2, col3 = st.sidebar.columns([1, 1, 2])
     col1.image("https://em-content.zobj.net/thumbs/240/google/350/open-book_1f4d6.png",
-               width=160)
+               width=100)
     col2.image("https://em-content.zobj.net/thumbs/240/google/350/artist-palette_1f3a8.png",
-               width=150)
+               width=100)
     col3.write("")
     display_welcome_screen()
     api_key = get_api_key_from_user()
@@ -45,8 +45,8 @@ def main():
 
 
 def get_api_key_from_user():
-    api_key = st.text_input("Enter your OpenAI API Key:",
-                            value="", type="password")
+    api_key = st.sidebar.text_input("Enter your OpenAI API Key:",
+                                    value="", type="password")
     return api_key
 
 
@@ -55,7 +55,7 @@ def initialize_openai_api(api_key):
 
 
 def display_welcome_screen():
-    st.title("Welcome to StorySmoosh")
+    st.title("Welcome to StorySmoosh!")
     st.subheader(
         "Create a unique and fun story by choosing your favorite story elements.")
     st.subheader("Let's get started!")
@@ -66,16 +66,16 @@ def collect_user_input():
     for category, options in STORY_ELEMENTS.items():
         user_selections[category] = st.selectbox(
             f"Choose a {category[:-1]}", options)
-    user_selections["age"] = st.slider("Child's Age", 3, 12)
-    user_selections["show_api_info"] = st.checkbox(
+    user_selections["age"] = st.sidebar.slider("Child's Age", 3, 12)
+    user_selections["show_api_info"] = st.sidebar.checkbox(
         "Show API prompts and models", value=False)
-    user_selections["generate_images"] = st.checkbox(
+    user_selections["generate_images"] = st.sidebar.checkbox(
         "Generate images", value=True)
 
     if user_selections["generate_images"]:
         styles = ["Cartoon", "Realistic", "Watercolor",
                   "Sketch", "Comic", "Pixel Art", "Minimalist"]
-        user_selections["style"] = st.selectbox(
+        user_selections["style"] = st.sidebar.selectbox(
             "Choose the desired style for the images:", styles)
     else:
         user_selections["style"] = None
