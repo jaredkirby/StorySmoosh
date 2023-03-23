@@ -1,6 +1,11 @@
-import os
 import openai
 import streamlit as st
+
+'''
+# ToDos:
+- Improve image generation prompt. They look like butt.
+- Add user custom story elements inputs by users.
+'''
 
 STORY_ELEMENTS = {
     "genres": ["Adventure", "Fantasy", "Mystery", "Science Fiction", "Historical Fiction", "Fairy Tales", "Superheroes", "Comedy", "Drama", "Horror"],
@@ -167,7 +172,7 @@ def generate_image_from_dalle(summary, style, with_spinner=False, show_api_info=
                 )
         else:
             response = openai.Image.create(
-                prompt=f"{style} {summary}",
+                prompt=f"{summary} In the style of {style} art.",
                 n=1,
                 size="512x512",
             )
