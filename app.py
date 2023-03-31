@@ -1,12 +1,6 @@
 import openai
 import streamlit as st
 
-'''
-# ToDos:
-- Improve image generation prompt. They look like butt.
-- Add user custom story elements inputs by users.
-'''
-
 STORY_ELEMENTS = {
     "genres": ["Adventure", "Fantasy", "Mystery", "Science Fiction", "Historical Fiction", "Fairy Tales", "Superheroes", "Comedy", "Drama", "Horror"],
     "main characters": ["Animals", "Humans", "Mythical Creatures", "Robots or AI", "Aliens", "Superheroes", "Pirates", "Time Travelers", "Explorers", "Magical Beings"],
